@@ -1,0 +1,46 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    box-shadow: 0px 2px 10px 0px rgb(193, 188, 188);
+}
+
+.pageTitle {
+    display: inline-flex;
+    position: fixed;
+    font-size: 1.5rem;
+}
+
+.colourName {
+    color: rgb(51, 156, 255);
+}
+
+.redditIcon {
+    margin-left: auto;
+    height: 2.2rem;
+    margin-right: 0.5rem;
+}
+
+.account {
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+.login, .signup {
+    margin: 0 1rem;
+    width: 8rem;
+    height: 2rem;
+    background: rgb(51, 156, 255);
+    color:white;
+    font-size: 1rem;
+    font-weight: 700;
+    border-color: aliceblue;
+    box-shadow: 1px 1px 3px 1px rgb(255, 255, 255);
+}
