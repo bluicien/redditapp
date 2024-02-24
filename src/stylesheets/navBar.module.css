@@ -33,7 +33,7 @@
     margin-right: 2rem;
 }
 
-.login, .signup {
+.login, .signup, .logout {
     margin: 0 1rem;
     width: 8rem;
     height: 2rem;
