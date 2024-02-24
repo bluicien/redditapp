@@ -20,12 +20,12 @@ export default function NavBar() {
         <>
             <header>
                 <nav className={styles.navBar}>
-                    <section className={styles.pageTitle}>
+                    <Link className={styles.pageTitle} to='/'>
                         <img className={styles.redditIcon} src={reditLogo} alt='Reddit blue alien icon' />
                         <h4>
                             <span className={styles.colourName}>Reddit</span>Minimal
                         </h4>
-                    </section>
+                    </Link>
                     {currentUser 
                     ? <section className={styles.account}>
                         <Link>{currentUser}</Link>

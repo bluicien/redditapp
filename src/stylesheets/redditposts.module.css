@@ -1,0 +1,53 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.newsFeed {
+    position: relative;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post {
+    margin: 2rem;
+    padding: 2rem;
+    box-shadow: 5px 5px 20px 15px rgba(201, 201, 201, 0.3);
+}
+
+.optionButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.voteGroup {
+    display: flex;
+    flex-direction: row;
+}
+
+.likeButton {
+    width: 30px;
+}
+
+.likeButton:active {
+    background-color: greenyellow;
+    border-radius: 15px;
+}
+.dislikeButton {
+    width: 30px;
+}
+
+.dislikeButton:active {
+    background-color: rgb(181, 0, 0);
+    border-radius: 15px;
+}
+
+.voteCount {
+    margin: 0px 5px 10px 5px;
+    font-weight: bolder;
+    font-size: 1.3rem;
+    color: rgb(96, 96, 96);
+}
