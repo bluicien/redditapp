@@ -5,6 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectCurrentUser } from '../features/user/userSlice';
 import { logoutUser } from '../features/user/userSlice';
+import Search from '../features/search/Search';
 
 
 export default function NavBar() {
@@ -20,6 +21,7 @@ export default function NavBar() {
         <>
             <header>
                 <nav className={styles.navBar}>
+                    <Search />
                     <Link className={styles.pageTitle} to='/'>
                         <img className={styles.redditIcon} src={reditLogo} alt='Reddit blue alien icon' />
                         <h4>

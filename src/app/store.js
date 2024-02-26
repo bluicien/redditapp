@@ -1,9 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
-import userSlice from '../features/user/userSlice';
+import userReducer from '../features/user/userSlice';
+import searchReducer from '../features/search/searchSlice';
+import newsfeedReducer from '../features/redditPosts/newsfeedSlice';
 // import counterReducer from '../features/counter/counterSlice';
 
-export const store = configureStore({
+export default configureStore({
   reducer: {
-    users: userSlice
+    users: userReducer,
+    search: searchReducer,
+    newsfeed: newsfeedReducer
   },
 });
