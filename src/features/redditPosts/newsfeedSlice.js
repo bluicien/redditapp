@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { selectSearchTerm } from "../search/searchSlice";
 
 
 export const loadNewsfeed = createAsyncThunk(
