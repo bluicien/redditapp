@@ -17,6 +17,16 @@
     padding: 1px;
 }
 
+.inputBox:-webkit-autofill,
+.inputBox:-webkit-autofill:hover, 
+.inputBox:-webkit-autofill:focus, 
+.inputBox:-webkit-autofill:active{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #000000;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px #8dc0ff64;
+}
+
 .inputLabel {
     padding-bottom: 0.5rem;
     margin-right: 1rem;

@@ -3,12 +3,21 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const loadNewsfeed = createAsyncThunk(
     'newsfeed/getAllPosts',
-    async (arg, thunkAPI) => {
+    async () => {
         const data = await fetch("https://www.reddit.com/.json");
         const json = await data.json();
         return json.data.children;
     },
   );
+
+  export const searchReddit = createAsyncThunk(
+    'newsfeed/searchPosts',
+    async (selectSearchType) => {
+        const data = await fetch(`https://www.reddit.com/search.json?q=${selectSearchType}`);
+        const json = await data.json();
+        return json.data.children;
+    }
+  )
 
 export const newsfeedSlice = createSlice({
     name: "newsfeed",
@@ -19,19 +28,36 @@ export const newsfeedSlice = createSlice({
     },
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(loadNewsfeed.fulfilled, (state, action) => {
-            state.posts = action.payload;
-        })
+        builder
+            .addCase(loadNewsfeed.pending, (state, action) => {
+                state.isLoading = false;
+                state.hasError = false;
+            })
+            .addCase(loadNewsfeed.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.hasError = false;
+                state.posts = action.payload;
+            })
+            .addCase(loadNewsfeed.rejected, (state, action) => {
+                state.hasError = true;
+                state.isLoading = false;
+            })
+            .addCase(searchReddit.pending, (state, action) => {
+                state.isLoading = true;
+                state.hasError = false;
+            })
+            .addCase(searchReddit.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.hasError = false;
+                state.posts = action.payload;
+            })
+            .addCase(searchReddit.rejected, (state, action) => {
+                state.isLoading = false;
+                state.hasError = true;
+            })
     }
 })
 
 export const selectNewfeedItems = (state) => state.newsfeed.posts;
-
-export const filteredPosts = (state) => {
-    const allPosts = selectNewfeedItems(state);
-
-    return allPosts;
-}
-
 
 export default newsfeedSlice.reducer;

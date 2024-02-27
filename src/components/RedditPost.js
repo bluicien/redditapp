@@ -19,7 +19,7 @@ export default function RedditPost(props) {
             <article className={styles.post}>
                 <div className={styles.voteGroup}>
                     <Link><img className={styles.likeButton} src={likeButton} alt='Thumbs up for like' /></Link>
-                    <p className={styles.voteCount} >14k</p>
+                    <p className={styles.voteCount} >{props.votes}</p>
                     <Link><img className={styles.dislikeButton} src={dislikeButton} alt='Thumbs down for dislike'/></Link>
                 </div>
                 <h2>{props.title}</h2>

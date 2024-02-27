@@ -13,7 +13,7 @@ export default function RedditPosts() {
     }, [dispatch])
 
     const newsfeed = useSelector(selectNewfeedItems)
-
+    
     return (
         <section className={styles.newsFeed}>
         {newsfeed.map(news => (
@@ -24,6 +24,7 @@ export default function RedditPosts() {
                 author={news.data.author}
                 time={news.data.created}
                 comments={news.data.num_comments}
+                votes={news.data.score}
             />
         ))}
         </section>
