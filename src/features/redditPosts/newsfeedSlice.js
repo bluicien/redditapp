@@ -59,5 +59,6 @@ export const newsfeedSlice = createSlice({
 })
 
 export const selectNewfeedItems = (state) => state.newsfeed.posts;
+export const selectPost = (id) => (state) => state.newsfeed.posts.find(post => post.data.id === id)
 
 export default newsfeedSlice.reducer;

@@ -12,7 +12,7 @@
     align-items: center;
 }
 
-.post {
+.posts {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -21,16 +21,29 @@
     box-shadow: 5px 5px 20px 15px rgba(201, 201, 201, 0.3);
 }
 
+.posts, .posts:active {
+    text-decoration: none;
+    color: inherit;
+}
+
 .optionButtons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 10px;
     font-weight: 600;
+    margin: 0px 10%;
 }
 
 .voteGroup {
     display: flex;
     flex-direction: row;
+    margin-left: 10%;
+}
+
+.nullBtn {
+    background-color: transparent;
+    border: none;
 }
 
 .likeButton {
@@ -59,11 +72,13 @@
 
 .redditImage {
     background-color: rgb(32, 28, 38);
+    width: 80%;
     height: 1000px;
-    object-fit:scale-down;
+    object-fit:contain;
     border-radius: 25px;
-    margin: 20px 0px;
-    padding: 5px 0px;
+    border: 2px outset black;
+    margin: 20px auto;
+    padding: 0px;
 }
 
 .commentIcon {
@@ -80,3 +95,23 @@
     background-color: blue;
 }
 
+.postTitle {
+    margin: 5px 10%;
+}
+
+.description {
+    border: 2px solid rgba(30, 21, 66, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 10%;
+}
+
+.redditMedia {
+    border: 2px dashed rebeccapurple;
+    background-color: rgb(32, 28, 38);
+    max-height: 750px;
+    min-height: 0px;
+    object-fit:contain;
+    border-radius: 25px;
+    margin: 20px 10%;
+}
